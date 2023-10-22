@@ -10,7 +10,7 @@ import pickle
 # import tensorflow.compat.v1
 
 import tensorflow as tf
-print(tf.__version__)
+print("versão do tensor flow: ".format(tf.__version__))
 
 
 from tensorflow.compat.v2.keras.wrappers.scikit_learn import KerasRegressor
