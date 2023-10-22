@@ -8,7 +8,7 @@ import os
 from feature_models import create_model, FeatureCreation
 import pickle
 # import tensorflow.compat.v1
-# from tensorflow.compat.v1.keras.wrappers.scikit_learn import KerasRegressor
+from tensorflow.compat.v2.keras.wrappers.scikit_learn import KerasRegressor
 from tensorflow.keras.models import load_model
 import functools
 from sklearn.model_selection import train_test_split
@@ -79,10 +79,10 @@ def load_models_df(dataframe):
                 # check if the target transformer it is active
                 if row['custom_target']:
                     # reconstruct the model inside a kerasregressor and add inside the transformed target object
-                    # model_trained.regressor.set_params(model = KerasRegressor(build_fn=create_model, verbose=0)) # original não comentada
+                    model_trained.regressor.set_params(model = KerasRegressor(build_fn=create_model, verbose=0)) # original não comentada
                     # add the keras model inside the pipeline object
-                    # model_trained.regressor_.named_steps['model'].model = model_keras  # original não comentada
-                    print("teste...")
+                    model_trained.regressor_.named_steps['model'].model = model_keras  # original não comentada
+                    # print("teste...")
                 else:
                     model_trained.named_steps['model'].model = model_keras
 
