@@ -13,7 +13,7 @@ import tensorflow as tf
 print("versão do tensor flow: ".format(tf.__version__))
 
 
-from tensorflow.compat.v2.keras.wrappers.scikit_learn import KerasRegressor
+from tensorflow.compat.v1.keras.wrappers.scikit_learn import KerasRegressor
 from tensorflow.keras.models import load_model
 import functools
 from sklearn.model_selection import train_test_split
